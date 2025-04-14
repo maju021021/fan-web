@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>سایت فان و سرگرمی 😄</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Vazir', sans-serif;
+      background: #111;
+      color: #fefefe;
+    }
+    header {
+      background: #222;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      color: #00ffc3;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+    }
+    nav a {
+      padding: 15px;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #00ffc3;
+      color: #000;
+    }
+    section {
+      padding: 30px;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    .riddle {
+      background: #222;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>سایت فان و سرگرمی 😄🎉</header>
+  <nav>
+    <a href="#" onclick="showSection('home')">صفحه اصلی</a>
+    <a href="#" onclick="showSection('funny')">مطالب فان</a>
+    <a href="#" onclick="showSection('riddles')">چیستان‌ها</a>
+    <a href="#" onclick="showSection('games')">بازی‌های ساده</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h2>خوش اومدی به دنیای خنده و سرگرمی!</h2>
+    <p>از منو بالا استفاده کن تا بین بخش‌های مختلف بچرخی و حال کنی 😉</p>
+  </section>
+
+  <section id="funny">
+    <h2>مطالب فان 😂</h2>
+    <ul>
+      <li>می‌دونی چرا کامپیوتر خسته نمی‌شه؟ چون همیشه پشت میز نشسته!</li>
+      <li>فرق آدم زرنگ با آدم تنبل چیه؟ یکی راه میانبر بلده، یکی دنبال میانبر می‌گرده!</li>
+      <li>یه روز کامپیوتر با مودم دعواش شد، چون مودم زیاد قِط می‌کرد!</li>
+    </ul>
+  </section>
+
+  <section id="riddles">
+    <h2>چیستان‌ها 🧠❓</h2>
+    <div class="riddle">
+      <strong>چیست آن چیزی که هر چی ازش برمی‌داری، بزرگ‌تر می‌شه؟</strong>
+      <p>🕵️‍♂️ پاسخ: چاله</p>
+    </div>
+    <div class="riddle">
+      <strong>آن چیست که مال توست، اما دیگران بیشتر از تو استفاده‌اش می‌کنند؟</strong>
+      <p>🕵️‍♀️ پاسخ: اسم تو</p>
+    </div>
+  </section>
+
+  <section id="games">
+    <h2>بازی ساده 🎮</h2>
+    <p>روی دکمه زیر کلیک کن تا امتیازت تصادفی تولید بشه!</p>
+    <button onclick="generateScore()">امتیاز بگیر!</button>
+    <h3 id="score"></h3>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function generateScore() {
+      const score = Math.floor(Math.random() * 100);
+      document.getElementById("score").innerText = `امتیاز شما: ${score} 🎯`;
+    }
+  </script>
+</body>
+</html>
